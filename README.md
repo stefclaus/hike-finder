@@ -2,9 +2,7 @@ HELLO WORLD
 
 # Hike::Finder
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/hike/finder`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Welcome to Hike Finder! This gem will allow you to explore hikes in the mid-Atlantic region using Hiking Upward. 
 
 ## Installation
 
@@ -24,7 +22,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+When you first enter the program, you'll chose how long you want to hike for. Then you'll be able to see individual hikes that meet your criteria. You may select an individual hike to see more about it, including hike length, and scenery and solitude rankings.
 
 ## Development
 
