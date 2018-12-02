@@ -19,28 +19,30 @@ class HikeFinder::CLI
     
     def list_hikes
       puts ""
-      puts "What hike would you like more information on?"
+      puts "Which hike would you like more information on?"
       input = gets.strip
       #hike = HikeFinder::Hike.find(input.to_i) #You haven't written this method yet 
       #print_restaurant(restaurant) #you haven't writtent his method yet 
     end  
     
-
+  
     def do_it_again
     puts ""
-    puts "Would you like to see another hike? Enter Y or N"
+    puts "Would you like to see another hike?"
 
     input = gets.strip.downcase
-    if input == "y"
+    if input == "y" || input == "Yes" || input = "Y" || input == "yes"
       start
-    elsif input == "n"
-      puts ""
-      puts "Thank you! Have a great day!"
-      exit
+    binding.pry
+    elsif input == "n" || input == "No" || input = "N" || input == "no"
+     puts ""
+      puts "Thank you! Happy hiking!"
+      exit 
     else
       puts ""
       puts "I don't understand that answer."
       start 
     end
+  end 
   
-end 
+end #ends class 
