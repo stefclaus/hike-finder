@@ -26,7 +26,7 @@ class HikeFinder::CLI
     end  
     
   
-    def do_it_again
+    def do_it_again #this creates an insane loop 
     puts ""
     puts "Would you like to see another hike?"
 
