@@ -4,10 +4,9 @@ class HikeFinder::Scraper
     Nokogiri::HTML(open("https://www.hikingupward.com/maps/"))
   end
 
-  #def self.scrape_hikes_index(get_page)
-  #   hikes = []
-   #  html = get_page 
-  #end
+  def scrape_hikes_index
+     self.get_page.css("div#hikes-list")
+  end
 
 #def self.scrape_index_page(index_url)
  #     students = []

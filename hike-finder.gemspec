@@ -5,10 +5,10 @@ require "hike/finder/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "hike-finder"
-  spec.version       = Hike::Finder::VERSION
+
   spec.authors       = ["'Stef Claus'"]
   spec.email         = ["'stef.claus@gmail.com'"]
-
+  spec.version       = Hike::Finder::VERSION
   spec.summary       = %q{TODO: Write a short summary, because RubyGems requires one.}
   spec.description   = %q{TODO: Write a longer description or delete this line.}
   spec.homepage      = "TODO: Put your gem's website or public repo URL here."
@@ -38,4 +38,7 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.16"
   spec.add_development_dependency "rake", "~> 10.0"
+  
+  
+  
 end
