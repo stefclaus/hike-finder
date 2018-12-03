@@ -20,7 +20,7 @@ Gem::Specification.new do |spec|
 
     spec.metadata["homepage_uri"] = spec.homepage
     spec.metadata["source_code_uri"] = "https://github.com/stefclaus/hike-finder"
-    spec.metadata["changelog_uri"] = "TODO: Put your gem's CHANGELOG.md URL here."
+    spec.metadata["changelog_uri"] = "https://github.com/stefclaus/hike-finder/commits/master"
   else
     raise "RubyGems 2.0 or newer is required to protect against " \
       "public gem pushes."
