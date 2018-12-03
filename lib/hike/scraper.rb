@@ -2,7 +2,6 @@ class HikeFinder::Scraper
 
   def get_page
     Nokogiri::HTML(open("https://www.hikingupward.com/maps/"))
-    binding.pry
   end
 
   #def self.scrape_hikes_index(get_page)
