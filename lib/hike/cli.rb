@@ -22,7 +22,7 @@ class HikeFinder::CLI
       puts "Which hike would you like more information on?"
       input = gets.strip
       #hike = HikeFinder::Hike.find(input.to_i) #You haven't written this method yet 
-      #print_restaurant(restaurant) #you haven't writtent his method yet 
+      #print_hike(hike) #you haven't writtent his method yet 
     end  
     
   
@@ -32,8 +32,7 @@ class HikeFinder::CLI
 
     input = gets.strip.downcase
     if input == "y" || input == "Yes" || input = "Y" || input == "yes"
-      start
-    binding.pry
+    #  start #this method isn't built
     elsif input == "n" || input == "No" || input = "N" || input == "no"
      puts ""
       puts "Thank you! Happy hiking!"
@@ -41,7 +40,7 @@ class HikeFinder::CLI
     else
       puts ""
       puts "I don't understand that answer."
-      start 
+     # start this method isn't built yet
     end
   end 
   
