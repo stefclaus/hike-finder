@@ -1,10 +1,16 @@
 class HikeFinder::CLI
-  
+
     def call
+   # HikeFinder::Scraper.new.make_hikes
      welcome 
-     hike_length
-     list_hikes
+     start
     end
+    
+    def start 
+      hike_length
+      list_hikes
+    #  do_it_again #do it again has an insane loop error I haven't figured out
+    end 
     
     def welcome
        puts "Let's find an awesome hike together."

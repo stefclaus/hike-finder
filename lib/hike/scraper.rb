@@ -1,5 +1,6 @@
 class  HikeFinder::Scraper
 
+#don't know if I should use this one or the one below 
  # def get_page
 #   Nokogiri::HTML(open("https://www.hikingupward.com/maps/"))
 #  end
@@ -13,8 +14,8 @@ class  HikeFinder::Scraper
 
 
  # def make_hikes
-  #  scrape_restaurants_index.each do |r|
-#      WorldsBestRestaurants::Restaurant.new_from_index_page(r)
+  #  scrape_hikes_index.each do |r|
+#      HikeFinder::Hikes.new_from_index_page(r)
 #  end
 #end 
 
