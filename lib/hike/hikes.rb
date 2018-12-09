@@ -4,7 +4,7 @@ class HikeFinder::Hikes
 
   @@all = []
 
-   def self.new_from_index_page(r)
+   def self.new_from_index_page(hike)
     self.new(
     #  r.css("h2").text,
     #  "https://www.theworlds50best.com#{r.css("a").attribute("href").text}",
