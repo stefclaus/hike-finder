@@ -13,9 +13,9 @@ class  HikeFinder::Scraper
     session.visit('https://www.hikingupward.com/maps/')
     element = session.all(:css,'.hike')
     element.each do |hike|
-      HikeFinder::Hikes.new_from_index_page(hike)
-      puts hike 
-      binding.pry
+      new_hike = hike.text.strip
+      HikeFinder::Hikes.new_from_index_page(new_hike)
+      #binding.pry
     end
   end 
   
