@@ -4,7 +4,7 @@ class HikeFinder::Hikes
 
   @@all = []
 
-   def self.new_from_index_page(hike)
+   def self.new_from_index_page(new_hike)
     self.new(
     #  r.css("h2").text,
     #  "https://www.theworlds50best.com#{r.css("a").attribute("href").text}",
@@ -32,9 +32,17 @@ class HikeFinder::Hikes
     self.all[id-1]
   end
 
- # def length
- #   @length ||= #doc.css("div.c-4.nr.nt ul:nth-child(8) li").text
- # end
+ def length
+    @length ||= doc.css("table.hike_pages td b")[6].text  
+  end
+  
+  def self.scrape 
+    doc ||= Nokogiri::HTML(open("https://www.hikingupward.com/PNF/RoaringForkFalls/"))
+    table = doc.at('.hike_pages')
+    length = doc.css("table.hike_pages td b")[6].text   
+    difficulty = doc.css("table.hike_pages td b")[7].href
+    binding.pry
+  end
 
 #  def difficulty
  #   @difficulty ||= #doc.css("div.c-4.nr.nt ul:nth-child(6) li").text
@@ -54,7 +62,8 @@ class HikeFinder::Hikes
  # end
 
   def doc
-    @doc ||= Nokogiri::HTML(open(self.url))
+   # @doc ||= Nokogiri::HTML(open(self.url))
+   @doc ||= Nokogiri::HTML(open("https://www.hikingupward.com/PNF/RoaringForkFalls/"))
   end
 
 end
