@@ -25,6 +25,8 @@ DEPENDENCIES
   hike-finder!
   pry
   rake (~> 10.0)
+  poltergeist, ~> 1.18, >= 1.18.1
+
 
 BUNDLED WITH
    1.17.1
