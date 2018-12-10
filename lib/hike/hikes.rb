@@ -41,7 +41,7 @@ class HikeFinder::Hikes
     table = doc.at('.hike_pages')
     hiking_time = doc.css("table.hike_pages td")[13].text.split("\r\n")[0]
     elevation_gain = doc.css("table.hike_pages td")[13].text.split("\r\n")[1].gsub(/\s+/, "")
-    
+    first_paragraph = doc.search("p")[1].text
     binding.pry
   end
 
