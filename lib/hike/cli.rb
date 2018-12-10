@@ -32,20 +32,20 @@ class HikeFinder::CLI
 
     def print_hike(hike)
       puts ""
-      puts "----------- #{hike.name} -----------"
+      puts "----------- #{hikes.hike_name} -----------"
       puts ""
-      puts "Length:           #{hike.length}"
-      puts "Hiking Time:          #{hike.hiking_time}"
-      puts "Elevation Gain:      #{hike.elevation_gain}"
+      puts "Length:           #{hikes.hike_length}"
+      puts "Hiking Time:          #{hikes.hiking_time}"
+      puts "Elevation Gain:      #{hikes.elevation_gain}"
       puts "---------------Description--------------"
       puts ""
-      puts "#{hike.first_paragraph}"
+      puts "#{hikes.first_paragraph}"
       puts ""
     end
 
-    def print_restaurants(from_number)
+    def print_hike(length)
       puts ""
-      puts "---------- Hikes #{from_number} - #{from_number+9} ----------"
+      puts "---------- Hikes #{from_length} - #{from_length+9} ----------"
       puts ""
         HikeFinder::Hikes.all[from_number-1, 10].each.with_index(from_number) do |hikes, index|
       puts "#{index}. #{hike.name} - #{hike.length}"

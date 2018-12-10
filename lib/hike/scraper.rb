@@ -1,10 +1,10 @@
 class  HikeFinder::Scraper
 
-  def self.select_single_hike
+  def self.experimenting
     session = Capybara::Session.new(:poltergeist)
     session.visit('https://www.hikingupward.com/maps/')
-    element = session.first('.hike') #this gives us Beartown State Hike and Hike Length 
-    element.text.strip #this gives us Beartown State Hike and Hike Length 
+    session.first('.hike')['href'].text
+    binding.pry
   end
 
 
@@ -12,20 +12,16 @@ class  HikeFinder::Scraper
     session = Capybara::Session.new(:poltergeist)
     session.visit('https://www.hikingupward.com/maps/')
     element = session.all(:css,'.hike')
-   # element.each do |hike|
-  #    new_hike = hike.text.strip
-  #    hike_name = new_hike.split("\t")[0]
-   #   hike_length = new_hike.split("\t")[1]
-  #    HikeFinder::Hikes.new_from_index_page(hike_name)
-   # end
-   element.each do |hike_index|
-       new_hike_name = hike.text.strip.split("\t")[0]
-       new_hike_length = hike.text.strip.split("\t")[1]
-        hike = HikeFinder::Hike.new(attributes)
-    end 
-     binding.pry
-  end #ends iteration 
+    
+     element.each do |hike|
+      new_hike = hike.text.strip
+      hike_name = new_hike.split("\t")[0]
+      hike_length = new_hike.split("\t")[1]
+     # hike_url = 
+      HikeFinder::Hikes.new_from_index_page(hike_name, hike_length, hike_url)
+     end
   end  #ends method 
+   
   
 
 end #ends class 
