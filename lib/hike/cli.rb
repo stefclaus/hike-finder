@@ -47,6 +47,28 @@ class HikeFinder::CLI
         puts "I don't understand that answer."
         start 
       end #ends if 
-    end #ends method  
+    end #ends method
+    
+    def print_hike(hike)
+      puts ""
+      puts "----------- #{hike.name} -----------"
+      puts ""
+      puts "Length:           #{hike.length}"
+      puts "Hiking Time:          #{hike.hiking_time}"
+      puts "Elevation Gain:      #{hike.elevation_gain}"
+      puts "---------------Description--------------"
+      puts ""
+      puts "#{hike.first_paragraph}"
+      puts ""
+    end
+
+    def print_restaurants(from_number)
+      puts ""
+      puts "---------- Hikes #{from_number} - #{from_number+9} ----------"
+      puts ""
+        HikeFinder::Hikes.all[from_number-1, 10].each.with_index(from_number) do |hikes, index|
+      puts "#{index}. #{hike.name} - #{hike.length}"
+      end #ends iteration
+    end #ends class 
   
 end #ends class 
