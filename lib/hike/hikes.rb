@@ -13,13 +13,10 @@ class HikeFinder::Hikes
      )
   end
 
-  def initialize(name=nil, url=nil, length=nil, hiking_time=nil, elevation_gain=nil, first_paragraph=nil)
+  def initialize(name=nil, url=nil, length=nil)
     @name = name
-    @url = url 
-    @length = length
-    @hiking_time= hiking_time
-    @elevation_gain = elevation_gain
-    @first_paragraph = first_paragraph
+    @url = url
+    @length = length 
     @@all << self
   end
 
@@ -35,15 +32,6 @@ class HikeFinder::Hikes
     @length ||= doc.css("table.hike_pages td b")[6].text  
   end
   
-  def self.scrape 
-    doc ||= Nokogiri::HTML(open("https://www.hikingupward.com/PNF/RoaringForkFalls/"))
-    table = doc.at('.hike_pages')
-    length = doc.css("table.hike_pages td b")[6].text  
-    hiking_time = doc.css("table.hike_pages td")[13].text.split("\r\n")[0]
-    elevation_gain = doc.css("table.hike_pages td")[13].text.split("\r\n")[1].gsub(/\s+/, "")
-    first_paragraph = doc.search("p")[1].text
-  end
-
   def hiking_time
     @hiking_time ||= doc.css("table.hike_pages td")[13].text.split("\r\n")[0]
   end
@@ -64,5 +52,15 @@ class HikeFinder::Hikes
    # @doc ||= Nokogiri::HTML(open(self.url))
    @doc ||= Nokogiri::HTML(open("https://www.hikingupward.com/PNF/RoaringForkFalls/"))
   end
+  
+   def self.scrape 
+    doc ||= Nokogiri::HTML(open("https://www.hikingupward.com/PNF/RoaringForkFalls/"))
+    table = doc.at('.hike_pages')
+    length = doc.css("table.hike_pages td b")[6].text  
+    hiking_time = doc.css("table.hike_pages td")[13].text.split("\r\n")[0]
+    elevation_gain = doc.css("table.hike_pages td")[13].text.split("\r\n")[1].gsub(/\s+/, "")
+    first_paragraph = doc.search("p")[1].text
+  end
+  
 
 end
