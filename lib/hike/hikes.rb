@@ -39,8 +39,9 @@ class HikeFinder::Hikes
   def self.scrape 
     doc ||= Nokogiri::HTML(open("https://www.hikingupward.com/PNF/RoaringForkFalls/"))
     table = doc.at('.hike_pages')
-    length = doc.css("table.hike_pages td b")[6].text   
-    difficulty = doc.css("table.hike_pages td b")[7].href
+    hiking_time = doc.css("table.hike_pages td")[13].text.split("\r\n")[0]
+    elevation_gain = doc.css("table.hike_pages td")[13].text.split("\r\n")[1].gsub(/\s+/, "")
+    
     binding.pry
   end
 
