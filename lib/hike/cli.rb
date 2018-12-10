@@ -27,27 +27,26 @@ class HikeFinder::CLI
       puts ""
       puts "Which hike would you like more information on?"
       input = gets.strip
-      #hike = HikeFinder::Hike.find(input.to_i) #You haven't written this method yet 
+      #hike = HikeFinder::Hike.find(input.to_i) 
       #print_hike(hike) #you haven't writtent his method yet 
     end  
     
   
     def do_it_again #this creates an insane loop 
-    puts ""
-    puts "Would you like to see another hike?"
-
-    input = gets.strip.downcase
-    if input == "y" || input == "Yes" || input = "Y" || input == "yes"
-    #  start #this method isn't built
-    elsif input == "n" || input == "No" || input = "N" || input == "no"
-     puts ""
-      puts "Thank you! Happy hiking!"
-      exit 
-    else
-      puts ""
-      puts "I don't understand that answer."
-     # start this method isn't built yet
-    end
-  end 
+      puts "Would you like to see another hike?"
+      input = gets.strip.downcase
+      
+      if input == "y" || input == "Yes" || input = "Y" || input == "yes"
+        start 
+      elsif input == "n" || input == "No" || input = "N" || input == "no"
+        puts ""
+        puts "Thank you! Happy hiking!"
+        exit 
+      else
+        puts ""
+        puts "I don't understand that answer."
+        start 
+      end #ends if 
+    end #ends method  
   
 end #ends class 

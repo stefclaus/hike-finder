@@ -1,6 +1,6 @@
 class HikeFinder::Hikes
 
-  attr_accessor :name, :length, :hiking_time, :elevation_gain, :first_paragraph
+  attr_accessor :name, :url, :length, :hiking_time, :elevation_gain, :first_paragraph, :website_url 
 
   @@all = []
 
@@ -13,8 +13,9 @@ class HikeFinder::Hikes
      )
   end
 
-  def initialize(name=nil, length=nil, hiking_time=nil, elevation_gain=nil, first_paragraph=nil)
+  def initialize(name=nil, url=nil, length=nil, hiking_time=nil, elevation_gain=nil, first_paragraph=nil)
     @name = name
+    @url = url 
     @length = length
     @hiking_time= hiking_time
     @elevation_gain = elevation_gain
@@ -55,7 +56,10 @@ class HikeFinder::Hikes
     @first_paragraph ||= doc.search("p")[1].text
   end
 
-
+#   def website_url
+#    @website_url ||= doc.search("p")[1].text
+#  end
+  
   def doc
    # @doc ||= Nokogiri::HTML(open(self.url))
    @doc ||= Nokogiri::HTML(open("https://www.hikingupward.com/PNF/RoaringForkFalls/"))
