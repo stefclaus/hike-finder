@@ -1,15 +1,14 @@
 class HikeFinder::CLI
 
     def call
-   # HikeFinder::Scraper.new.make_hikes
-     welcome 
-     start
+      HikeFinder::Scraper.new.make_hikes
+      welcome 
+      start
     end
     
     def start 
       hike_length
       list_hikes
-    #  do_it_again #do it again has an insane loop error I haven't figured out
     end 
     
     def welcome
@@ -30,25 +29,7 @@ class HikeFinder::CLI
       #hike = HikeFinder::Hike.find(input.to_i) 
       #print_hike(hike) #you haven't writtent his method yet 
     end  
-    
-  
-    def do_it_again #this creates an insane loop 
-      puts "Would you like to see another hike?"
-      input = gets.strip.downcase
-      
-      if input == "y" || input == "Yes" || input = "Y" || input == "yes"
-        start 
-      elsif input == "n" || input == "No" || input = "N" || input == "no"
-        puts ""
-        puts "Thank you! Happy hiking!"
-        exit 
-      else
-        puts ""
-        puts "I don't understand that answer."
-        start 
-      end #ends if 
-    end #ends method
-    
+
     def print_hike(hike)
       puts ""
       puts "----------- #{hike.name} -----------"
