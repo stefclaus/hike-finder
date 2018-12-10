@@ -14,10 +14,11 @@ class  HikeFinder::Scraper
     element = session.all(:css,'.hike')
     element.each do |hike|
       new_hike = hike.text.strip
-      HikeFinder::Hikes.new_from_index_page(new_hike)
-     # puts new_hike
+      hike_name = new_hike.split("\t")[0]
+      hike_length = new_hike.split("\t")[1]
+      HikeFinder::Hikes.new_from_index_page(hike_name)
     end
-   # binding.pry
+    binding.pry
   end 
   
   
