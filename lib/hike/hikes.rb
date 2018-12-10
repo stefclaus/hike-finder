@@ -1,6 +1,6 @@
 class HikeFinder::Hikes
 
-  attr_accessor :name, :length, :difficulty, :streams, :views, :solitiude, :camping 
+  attr_accessor :name, :length, :hiking_time, :elevation_gain, :first_paragraph
 
   @@all = []
 
@@ -13,14 +13,12 @@ class HikeFinder::Hikes
      )
   end
 
-  def initialize(name=nil, length=nil, difficulty=nil, streams=nil, views=nil, solitude=nil, camping=nil)
+  def initialize(name=nil, length=nil, hiking_time=nil, elevation_gain=nil, first_paragraph=nil)
     @name = name
     @length = length
-    @difficulty= difficulty
-    @streams = streams
-    @views = views
-    @solitude = solitude 
-    @camping = camping 
+    @hiking_time= hiking_time
+    @elevation_gain = elevation_gain
+    @first_paragraph = first_paragraph
     @@all << self
   end
 
@@ -39,28 +37,24 @@ class HikeFinder::Hikes
   def self.scrape 
     doc ||= Nokogiri::HTML(open("https://www.hikingupward.com/PNF/RoaringForkFalls/"))
     table = doc.at('.hike_pages')
+    length = doc.css("table.hike_pages td b")[6].text  
     hiking_time = doc.css("table.hike_pages td")[13].text.split("\r\n")[0]
     elevation_gain = doc.css("table.hike_pages td")[13].text.split("\r\n")[1].gsub(/\s+/, "")
     first_paragraph = doc.search("p")[1].text
-    binding.pry
   end
 
-#  def difficulty
- #   @difficulty ||= #doc.css("div.c-4.nr.nt ul:nth-child(6) li").text
- # end
+  def hiking_time
+    @hiking_time ||= doc.css("table.hike_pages td")[13].text.split("\r\n")[0]
+  end
 
- # def streams
- #   @streams ||= #doc.css("div.c-4.nr.nt ul:nth-child(10) li:nth-child(1)").text.split("+").join(". Tel: +")
- # end
+ def elevation_gain
+    @elevation_gain ||= doc.css("table.hike_pages td")[13].text.split("\r\n")[1].gsub(/\s+/, "")
+  end
 
- # def solitude
- #   @solitude ||= #doc.css("div.c-4.nr.nt ul:nth-child(3) li").text.split(" (pictured)").join("")
- # end
+  def first_paragraph
+    @first_paragraph ||= doc.search("p")[1].text
+  end
 
- # def camping
-  #  @camping ||= #doc.css("div.c-4.nr.nt ul:nth-child(10) li:nth-child(2) a").text
-    # @website_url ||= doc.xpath("//div[@class='c-4 nr nt']/ul[4]/li[2]/a").text
- # end
 
   def doc
    # @doc ||= Nokogiri::HTML(open(self.url))
