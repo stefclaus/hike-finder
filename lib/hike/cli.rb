@@ -45,10 +45,10 @@ class HikeFinder::CLI
 
     def print_hike(length)
       puts ""
-      puts "---------- Hikes #{length} - #{ength+9} ----------"
+      puts "---------- Hikes #{length} - #{length+9} ----------"
       puts ""
-        HikeFinder::Hikes.all[from_number-1, 10].each.with_index(from_number) do |hikes, index|
-      puts "#{index}. #{hike.name} - #{hike.length}"
+        HikeFinder::Hikes.all[length-1, 10].each.with_index(length) do |hikes, index|
+      puts "#{index}. #{hikes.hike_name} - #{hikes.hike_length}"
       end #ends iteration
     end #ends class 
   
