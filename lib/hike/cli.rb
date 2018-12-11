@@ -26,7 +26,7 @@ class HikeFinder::CLI
       puts ""
       puts "Which hike would you like more information on?"
       input = gets.strip
-      hike = HikeFinder::Hike.find(input.to_i) 
+      hike = HikeFinder::Hikes.find(input.to_i) 
       print_hike(hike)  
     end  
 
