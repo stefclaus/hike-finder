@@ -27,19 +27,19 @@ class HikeFinder::CLI
       puts "Which hike would you like more information on?"
       input = gets.strip
       hike = HikeFinder::Hikes.find(input.to_i) 
-      print_detials(hike)  
+      print_detials(hike)
     end  
 
     def print_detials(hike)
       puts ""
- #     puts "----------- #{hikes.hike_name} -----------"
+      puts "----------- #{hike.hike_name} -----------"
       puts ""
- #     puts "Length:           #{hikes.hike_length}"
-      puts "Hiking Time:          #{hikes.hiking_time}"
-      puts "Elevation Gain:      #{hikes.elevation_gain}"
+      puts "Length:           #{hike.hike_length}"
+      puts "Hiking Time:          #{hike.hiking_time}"
+      puts "Elevation Gain:      #{hike.elevation_gain}"
       puts "---------------Description--------------"
       puts ""
-      puts "#{hikes.first_paragraph}"
+      puts "#{hike.first_paragraph}"
       puts ""
     end
 
@@ -48,8 +48,8 @@ class HikeFinder::CLI
       puts "---------- Hikes #{length} - #{length} ----------"
       puts ""
         HikeFinder::Hikes.all[length, 10].each.with_index(length) do |hikes, index|
-      puts "#{index}. #{hikes.hike_name} - #{hikes.hike_length}"
-      end #ends iteration
+          puts "#{index}. #{hikes.hike_name} - #{hikes.hike_length}"
+        end #ends iteration
     end #ends class 
   
 end #ends class 

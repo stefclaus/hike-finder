@@ -1,7 +1,7 @@
 class HikeFinder::Hikes
 
   attr_accessor :hike_name, :hike_url, :hike_length, :hiking_time, :elevation_gain, :first_paragraph
-
+  
   @@all = []
 
   def self.new_from_index_page(hike_name, hike_length, hike_url)
@@ -41,7 +41,7 @@ class HikeFinder::Hikes
   end
   
   def doc
-    @doc ||= Nokogiri::HTML(open(self.hike_url))
+    @doc ||= Nokogiri::HTML(open(self.hike_url), :allow_redirections => :all)
   end
   
  #  def self.scrape 

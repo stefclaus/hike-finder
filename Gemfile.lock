@@ -3,6 +3,7 @@ PATH
   specs:
     hike-finder (0.1.0)
       nokogiri
+      open_uri_redirections
       poltergeist
 
 GEM
@@ -25,6 +26,7 @@ GEM
     mini_portile2 (2.3.0)
     nokogiri (1.8.5)
       mini_portile2 (~> 2.3.0)
+    open_uri_redirections (0.2.1)
     poltergeist (1.18.1)
       capybara (>= 2.1, < 4)
       cliver (~> 0.3.1)
