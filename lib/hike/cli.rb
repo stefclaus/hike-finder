@@ -19,7 +19,7 @@ class HikeFinder::CLI
       puts ""
       puts "How many miles do you want to hike this weekend?  0-5 miles, 5-10 miles, 10-25 miles, or 20+ miles?"
       input = gets.strip.to_i
-      #print_hikes(input) #you haven't written this method yet 
+      print_hikes(length) #you haven't written this method yet 
     end
     
     def list_hikes

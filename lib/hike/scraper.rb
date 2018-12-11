@@ -1,13 +1,6 @@
 class  HikeFinder::Scraper
 
-  def self.experimenting
-    session = Capybara::Session.new(:poltergeist)
-    session.visit('https://www.hikingupward.com/maps/')
-    session.first(:css, '.hike a:nth-child(2)')[:href]
-  end
-
-
-  def self.make_hikes
+  def make_hikes
     session = Capybara::Session.new(:poltergeist)
     session.visit('https://www.hikingupward.com/maps/')
     element = session.all(:css,'.hike')

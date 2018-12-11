@@ -5,7 +5,6 @@ class HikeFinder::Hikes
   @@all = []
 
   def self.new_from_index_page(hike_name, hike_length, hike_url)
-    binding.pry
     self.new(hike_name, hike_length, hike_url)
   end 
     
@@ -26,7 +25,7 @@ class HikeFinder::Hikes
   end
 
  def length
-    @length ||= doc.css("table.hike_pages td b")[6].text  
+    @length ||= doc.css("table.hike_pages td b")[6].text 
   end
   
   def hiking_time
