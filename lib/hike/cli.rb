@@ -18,16 +18,16 @@ class HikeFinder::CLI
     def hike_length
       puts ""
       puts "How many miles do you want to hike this weekend?  0-5 miles, 5-10 miles, 10-25 miles, or 20+ miles?"
-      input = gets.strip.to_i
-      print_hikes(length) #you haven't written this method yet 
+      length = gets.strip.to_i
+      print_hike(length) 
     end
     
     def list_hikes
       puts ""
       puts "Which hike would you like more information on?"
       input = gets.strip
-      #hike = HikeFinder::Hike.find(input.to_i) 
-      #print_hike(hike) #you haven't writtent his method yet 
+      hike = HikeFinder::Hike.find(input.to_i) 
+      print_hike(hike)  
     end  
 
     def print_hike(hike)
@@ -45,7 +45,7 @@ class HikeFinder::CLI
 
     def print_hike(length)
       puts ""
-      puts "---------- Hikes #{from_length} - #{from_length+9} ----------"
+      puts "---------- Hikes #{length} - #{ength+9} ----------"
       puts ""
         HikeFinder::Hikes.all[from_number-1, 10].each.with_index(from_number) do |hikes, index|
       puts "#{index}. #{hike.name} - #{hike.length}"
