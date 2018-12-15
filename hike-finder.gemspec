@@ -40,7 +40,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "pry"
   spec.add_dependency "nokogiri"
   spec.add_dependency "poltergeist"
-  spec.add_dependency "open_uri_redirections"
 
   
 end
