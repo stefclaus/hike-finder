@@ -22,7 +22,7 @@ Or install it yourself as:
 
 ## Usage
 
-When you first enter the program, you'll chose how long you want to hike for. Then you'll be able to see individual hikes that meet your criteria. You may select an individual hike to see more about it, including hike length, and scenery and solitude rankings.
+When you first enter the program, you'll see a list of hikes from the mid-Atlantic region. Then you'll be able to see more about an individual hike, including length, elevation gain, and a short description.
 
 ## Development
 
