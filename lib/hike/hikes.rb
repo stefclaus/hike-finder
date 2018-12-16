@@ -41,7 +41,8 @@ class HikeFinder::Hikes
   end
   
   def doc
-    @doc ||= Nokogiri::HTML(open(self.hike_url), :allow_redirections => :all)
+    safe_hike_url = "https://#{self.hike_url.split("http://")[1]}"
+    @doc ||= Nokogiri::HTML(open(safe_hike_url))
   end
   
  #  def self.scrape 
