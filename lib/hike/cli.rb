@@ -12,13 +12,16 @@ class HikeFinder::CLI
     end 
     
     def welcome
-       puts "Let's find an awesome hike together."
+       puts "Let's find a micro-adventure together."
+       puts "Hiking with small kids is hard, but that doesn't mean you can't have a mini-adventure!"
     end 
     
     def hike_length
       puts ""
-      puts "Which of these hikes would you like to see more information on?"
-      experimenting
+      puts "How long do you want your mini-hike to be?"
+      puts "Type 1 for 1 mile hikes, 2 for 2 mile hikes, or 3 for 3 mile hikes."
+      length = gets.strip.to_i
+      experimenting(length)
     end
     
     def list_hikes
@@ -51,10 +54,23 @@ class HikeFinder::CLI
         end #ends iteration
     end #ends class 
   
-   def experimenting
-      HikeFinder::Hikes.all[0, 365].each.with_index do |hike, index| 
-        puts "#{index}. #{hike.hike_name} - #{hike.hike_length}"
-      end #ends iteration
-      end #ends method 
+   def experimenting(length)
+     puts "---------- #{length} Mile Hikes in the Mid-Atlantic Region ----------"
+     if length == 1
+        HikeFinder::Hikes.all[6, 19].each.with_index do |hike, index| 
+          puts "#{index}. #{hike.hike_name} - #{hike.hike_length}"
+        end #ends iteration
+      elsif length == 2
+        HikeFinder::Hikes.all[20, 39].each.with_index do |hike, index| 
+          puts "#{index}. #{hike.hike_name} - #{hike.hike_length}"
+        end #ends iteration
+      elsif length == 3
+        HikeFinder::Hikes.all[40, 58].each.with_index do |hike, index| 
+          puts "#{index}. #{hike.hike_name} - #{hike.hike_length}"
+        end #ends iteration
+      else 
+        puts "Sorry--choose a number between 1 and 3 next time."
+      end #ends if statement 
+    end #ends method 
   
 end #ends class 
