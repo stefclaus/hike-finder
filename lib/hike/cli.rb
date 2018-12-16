@@ -58,15 +58,15 @@ class HikeFinder::CLI
      puts "---------- #{length} Mile Hikes in the Mid-Atlantic Region ----------"
      if length == 1
         HikeFinder::Hikes.all[6, 19].each.with_index do |hike, index| 
-          puts "#{index}. #{hike.hike_name} - #{hike.hike_length}"
+          puts "#{index+6}. #{hike.hike_name} - #{hike.hike_length}"
         end #ends iteration
       elsif length == 2
         HikeFinder::Hikes.all[20, 39].each.with_index do |hike, index| 
-          puts "#{index}. #{hike.hike_name} - #{hike.hike_length}"
+          puts "#{index+20}. #{hike.hike_name} - #{hike.hike_length}"
         end #ends iteration
       elsif length == 3
         HikeFinder::Hikes.all[40, 58].each.with_index do |hike, index| 
-          puts "#{index}. #{hike.hike_name} - #{hike.hike_length}"
+          puts "#{index+40}. #{hike.hike_name} - #{hike.hike_length}"
         end #ends iteration
       else 
         puts "Sorry--choose a number between 1 and 3 next time."
