@@ -29,7 +29,7 @@ class HikeFinder::Hikes
     @doc ||= Nokogiri::HTML(open(safe_hike_url))
   end
   
- def length
+  def length
     @length ||= doc.css("table.hike_pages td b")[6].text 
   end
   
