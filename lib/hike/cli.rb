@@ -8,25 +8,20 @@ class HikeFinder::CLI
     end
     
     def start 
-      hike_length
-      list_hikes
-    end 
-    
-    def hike_length
       puts ""
       puts "How long do you want your mini-hike to be?"
       puts "Type 1 for 1 mile hikes, 2 for 2 mile hikes, or 3 for 3 mile hikes."
+      
       length = gets.strip.to_i
       print_hike(length)
-    end
-    
-    def list_hikes
+      
       puts ""
       puts "Which hike would you like more information on?"
       input = gets.strip
       hike = HikeFinder::Hikes.find(input.to_i + 1) 
       print_detials(hike)
-    end  
+    end 
+    
 
     def print_detials(hike)
       puts ""
