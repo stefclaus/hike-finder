@@ -49,15 +49,15 @@ class HikeFinder::CLI
    def print_hike(length)
      puts "---------- #{length} Mile Hikes in the Mid-Atlantic Region ----------"
      if length == 1
-        HikeFinder::Hikes.all[6, 17].each.with_index do |hike, index| 
+        HikeFinder::Hikes.all[6, 12].each.with_index do |hike, index| 
           puts "#{index+6}. #{hike.hike_name} - #{hike.hike_length}"
         end #ends iteration
       elsif length == 2
-        HikeFinder::Hikes.all[18, 39].each.with_index do |hike, index| 
+        HikeFinder::Hikes.all[18, 19].each.with_index do |hike, index| 
           puts "#{index+18}. #{hike.hike_name} - #{hike.hike_length}"
         end #ends iteration
       elsif length == 3
-        HikeFinder::Hikes.all[40, 58].each.with_index do |hike, index| 
+        HikeFinder::Hikes.all[40, 17].each.with_index do |hike, index| 
           puts "#{index+40}. #{hike.hike_name} - #{hike.hike_length}"
         end #ends iteration
       else 
