@@ -2,18 +2,14 @@ class HikeFinder::CLI
 
     def call
       HikeFinder::Scraper.new.make_hikes
-      welcome 
+       puts "Let's find a micro-adventure together."
+       puts "Hiking with small kids is hard, but that doesn't mean you can't have a mini-adventure!"
       start
     end
     
     def start 
       hike_length
       list_hikes
-    end 
-    
-    def welcome
-       puts "Let's find a micro-adventure together."
-       puts "Hiking with small kids is hard, but that doesn't mean you can't have a mini-adventure!"
     end 
     
     def hike_length
@@ -47,16 +43,18 @@ class HikeFinder::CLI
 
   
    def print_hike(length)
-     puts "---------- #{length} Mile Hikes in the Mid-Atlantic Region ----------"
      if length == 1
+        puts "---------- #{length} Mile Hikes in the Mid-Atlantic Region ----------"
         HikeFinder::Hikes.all[6, 12].each.with_index do |hike, index| 
           puts "#{index+6}. #{hike.hike_name} - #{hike.hike_length}"
         end #ends iteration
       elsif length == 2
+        puts "---------- #{length} Mile Hikes in the Mid-Atlantic Region ----------"
         HikeFinder::Hikes.all[18, 19].each.with_index do |hike, index| 
           puts "#{index+18}. #{hike.hike_name} - #{hike.hike_length}"
         end #ends iteration
       elsif length == 3
+        puts "---------- #{length} Mile Hikes in the Mid-Atlantic Region ----------"
         HikeFinder::Hikes.all[40, 17].each.with_index do |hike, index| 
           puts "#{index+40}. #{hike.hike_name} - #{hike.hike_length}"
         end #ends iteration
