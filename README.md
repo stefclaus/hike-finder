@@ -2,7 +2,7 @@ HELLO WORLD
 
 # Hike::Finder
 
-Welcome to Hike Finder! This gem will allow you to explore hikes in the mid-Atlantic region using Hiking Upward. 
+Welcome to Hike Finder! This gem will allow you to explore mini-hikes (3 miles and under) in the mid-Atlantic region using Hiking Upward. 
 
 ## Installation
 
