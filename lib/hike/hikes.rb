@@ -24,6 +24,11 @@ class HikeFinder::Hikes
     self.all[id-1]
   end
 
+  def doc
+    safe_hike_url = "https://#{self.hike_url.split("http://")[1]}"
+    @doc ||= Nokogiri::HTML(open(safe_hike_url))
+  end
+  
  def length
     @length ||= doc.css("table.hike_pages td b")[6].text 
   end
@@ -40,10 +45,7 @@ class HikeFinder::Hikes
     @first_paragraph ||= doc.search("p")[1].text
   end
   
-  def doc
-    safe_hike_url = "https://#{self.hike_url.split("http://")[1]}"
-    @doc ||= Nokogiri::HTML(open(safe_hike_url))
-  end
+
   
 
 end

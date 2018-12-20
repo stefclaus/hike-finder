@@ -20,6 +20,7 @@ class HikeFinder::CLI
       input = gets.strip
       hike = HikeFinder::Hikes.find(input.to_i + 1) 
       print_detials(hike)
+      
     end 
     
 
